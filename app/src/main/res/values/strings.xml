@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Film quotes</string>
+
+    <string name="button_label">Click me!</string>
+
+    <string name="quote">Hasta la vista, baby!</string>
+    <string name="film">Terminator 2: Judgement Day</string>
 </resources>

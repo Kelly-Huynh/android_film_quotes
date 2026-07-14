@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -22,6 +23,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -95,6 +97,13 @@ fun FilmQuoteApp(modifier: Modifier = Modifier) {
             FilmText(
                 film = "Terminator 2: Judgement Day"
             )
+            Button(onClick = {
+                println("Button was clicked!")
+            }) {
+                Text(
+                    text = stringResource(R.string.button_label)
+                )
+            }
             Image(
                 painter = painterResource(id = R.drawable.t2_logo),
                 contentDescription = "Terminator logo",
@@ -122,18 +131,19 @@ fun QuoteText(quote: String, modifier: Modifier = Modifier) {
 
 @Composable
 fun FilmText(film: String, modifier: Modifier = Modifier) {
-        Text(
-            text = film,
-            fontSize = 38.sp,
-            lineHeight = 60.sp,
-            color = Color.Gray,
-            textAlign = TextAlign.End,
-            modifier = modifier
-                .fillMaxWidth()
-                .padding(16.dp)
+    Text(
+        text = film,
+        fontSize = 38.sp,
+        lineHeight = 60.sp,
+        color = Color.Gray,
+        textAlign = TextAlign.End,
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(16.dp)
 
-        )
-    }
+    )
+}
+
 
 
 @Preview(showBackground = true)
